@@ -11,7 +11,7 @@ exports.up = function(knex) {
   .createTable('recommendations', tbl => {
       tbl.increments('id')
       tbl.integer('userid')
-      tbl.string('name')
+      tbl.json('recommendation-details')
   })
 };
 
