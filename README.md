@@ -1,9 +1,8 @@
 <!-- # back-end
-
-users end points: 
+users router end points: 
 
 TO REGISTER A NEW USER- 
-
+/**
 method: POST  
 
 EP: /users/register 
@@ -37,5 +36,4 @@ accepts : {
 returns : {
     "message": "welcome back testuser02!",
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTg0OTU2MjksImV4cCI6MTU5ODUyNDQyOX0.zNMELQPcnpJiTvlx1MW-Kabdmjqs6qMHu53adVh7hRw"
-}
- -->
+} -->
