@@ -11,13 +11,18 @@ exports.up = function(knex) {
   .createTable('recommendations', tbl => {
       tbl.increments('id')
       tbl.integer('userid')
-      tbl.json('recommendation-details')
+      tbl.string('description')
+      tbl.string('effect')
+      tbl.string('flavor')
+      tbl.string('rating') 
+      tbl.string('type')
+      tbl.string('strain')
   })
 };
 
 exports.down = function(knex) {
   return knex.schema
-    // .dropTableIfExists('users')
+    .dropTableIfExists('users')
     .dropTableIfExists('recommendations')
 };
 

@@ -29,7 +29,14 @@ recommendationsRouter.post('/:id',(req,res)=> {
 
 recommendationsRouter.delete('/:id',(req,res)=> {
     const id = req.params.id
-  return db('recommendations').where({id})
+  return db('recommendations').where({id}).del()
+        .then(resp => {
+            res.status(200).json({message:'recommendation deleted'})
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(400).json({message:'recommendation NOT deleted.'})
+        })
 })
 
 module.exports = recommendationsRouter
