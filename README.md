@@ -1,39 +1,59 @@
 <!-- # back-end
-users router end points: 
+recommendations router end points: 
 
-TO REGISTER A NEW USER- 
+TO add A NEW recommendation- 
 /**
 method: POST  
 
-EP: /users/register 
+EP: /recommendations/:id  (ID IS THE USER ID!!!!!)
 
 accepts : {
-	"username": "testuser01",
-       "password": "test0"
-
+     (insert ptoperty values from returned json object from suggestion api)
+    "description": "",
+    "effect": "",
+    "flavor": "",
+    "rating": "",
+    "type": "",
+    "strain": ""
 }
+
+
+
 
 returns : {
-    "message": "user created, welcome ${username}",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTg0OTU0NTMsImV4cCI6MTU5ODUyNDI1M30.-7B8xW8woT6oKsEUKN0Ip8SmeBZRicT0RaUse42aIQM"
+    message: "recommendation added."
 }
 
 
 
 
-TO LOGIN AN EXISTING USER- 
+TO GET ALL RECOMMENDATIONS FOR A USER- 
 
-method: POST  
+method: GET  
 
-EP: /users/login 
+EP: /recommendations/:id (ID IS THE USER ID!!!!!)
 
-accepts : {
-	"username": "testuser01",
-       "password": "test0"
 
-}
+returns : [
+    {
+        "id": 1,
+        "userid": 1,
+        "description": "test",
+        "effect": "test",
+        "flavor": "test",
+        "rating": "test",
+        "type": "test",
+        "strain": "test"
+    }
+]
+
+TO DELETE A RECOMMENDATION-
+
+method: DELETE
+
+EP: /recommendations/:id (ID IS THE RECOMMENDATION ID!!!!!)
 
 returns : {
-    "message": "welcome back testuser02!",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTg0OTU2MjksImV4cCI6MTU5ODUyNDQyOX0.zNMELQPcnpJiTvlx1MW-Kabdmjqs6qMHu53adVh7hRw"
+    message: 'recommendation deleted.'
 } -->
+
