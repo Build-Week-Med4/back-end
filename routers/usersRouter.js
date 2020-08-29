@@ -24,6 +24,7 @@ usersRouter.post('/register',(req,res)=> {
             console.log(user)
             if(user){
                 const token = generateToken(user)
+                console.log(user.id)
                 res.status(201).json({message:`user created, welcome ${req.body.username}!`,token})
             } else {
                 res.status(400).json({message:'user not created'})
@@ -42,10 +43,12 @@ usersRouter.post('/login', (req,res)=> {
         .then(user => {
             if(user && bcrypt.compareSync(req.body.password,user[0].password)){
                 token = generateToken(user)
-                res.status(200).json({message:`welcome back ${username}!`,token})
+                console.log(user)
+                const id = user[0].id
+                res.status(200).json({id, message:`welcome back ${req.body.username}!`,token})
             } else {
                 res.status(400).json({message:'invalid credentials'})
-            }
+            } 
         })
         .catch(err => {
             console.log(err)
