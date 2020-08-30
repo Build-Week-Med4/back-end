@@ -7,7 +7,7 @@ const cors = require('cors')
 server.use(cors())
 server.use(function(req, res, next) {
     if (!req.headers.token) {
-      return res.status(403).json({ error: 'No credentials sent!' });
+      return res.status(403).json({ error: 'you must be logged in first!' });
     }
     next();
   });
