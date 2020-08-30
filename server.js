@@ -5,6 +5,12 @@ const recommendationsRouter = require('./routers/recommendationsRouter')
 const cors = require('cors')
 
 server.use(cors())
+server.use(function(req, res, next) {
+    if (!req.headers.token) {
+      return res.status(403).json({ error: 'No credentials sent!' });
+    }
+    next();
+  });
 server.use(express.json())
 server.use('/users',usersRouter)
 server.use('/recommendations',recommendationsRouter)

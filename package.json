@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "cross-env DB_ENV=testing jest --watch",
     "server": "nodemon index.js",
     "start": "node index.js"
   },
@@ -26,9 +26,11 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.5",
     "nodemon": "^2.0.4",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
-    "crossenv": "0.0.2-security"
+    "cross-env": "^7.0.2",
+    "jest": "^26.4.2"
   }
 }
