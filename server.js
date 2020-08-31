@@ -8,7 +8,7 @@ server.use(cors())
 server.use(express.json())
 server.use('/users',usersRouter)
 server.use(function(req, res, next) {
-  if (!req.headers.token) {
+  if (!req.headers.authorization) {
     return res.status(403).json({ error: 'you must be logged in first!' });
   }
   next();
